@@ -16,7 +16,7 @@ public class Tema2Ejercicio32 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int euros, billetes50, billetes20, billetes10, billetes5, monedas2, monedas1; //Creo todas las variables necesarias
+        int total, euros, billetes50, billetes20, billetes10, billetes5, monedas2, monedas1; //Creo todas las variables necesarias
         
         Scanner entrada = new Scanner (System.in); //Creo un nuevo Scanner
         
@@ -24,14 +24,26 @@ public class Tema2Ejercicio32 {
         
         euros=entrada.nextInt();
         
-        billetes50=euros/50;
-        billetes20=(euros-billetes50)/20;
-        billetes10=(billetes50-billetes20)/10;
-        billetes5=(billetes20-billetes10)/5;
-        monedas2=(billetes10-billetes5)/2;
-        monedas1=(billetes5-monedas2);
+        total=euros;
         
-        System.out.println(euros+" Euros se descomponen en "+billetes50+" billetes de 50, "+billetes20+" billetes de 20, "+billetes10+" billetes de 10, "+billetes5+" billetes de 5, "+monedas2+" monedas de 2 euros y "+monedas1+" monedas de 1 euro.");
+        billetes50=euros/50;
+        euros=euros%50;
+                
+        billetes20=euros/20;
+        euros=euros%20;
+                
+        billetes10=euros/10;
+        euros=euros%10;
+        
+        billetes5=euros/5;
+        euros=euros%5;
+                
+        monedas2=euros/2;
+        euros=euros%2;
+        
+        monedas1=euros;
+        
+        System.out.println(total+" Euros se descomponen en "+billetes50+" billetes de 50, "+billetes20+" billetes de 20, "+billetes10+" billetes de 10, "+billetes5+" billetes de 5, "+monedas2+" monedas de 2 euros y "+monedas1+" monedas de 1 euro.");
                 
         
         
